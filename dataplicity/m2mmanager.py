@@ -276,7 +276,9 @@ class M2MManager(object):
         elif action == 'open-portredirect':
             device_port = data['device_port']
             m2m_port = data['m2m_port']
-            self.client.port_forward.redirect_port(device_port, m2m_port)
+            self.client.port_forward.redirect_port(
+                device_port=device_port, m2m_port=m2m_port
+            )
         elif action == 'reboot-device':
             log.debug('reboot requested')
             self.reboot()
